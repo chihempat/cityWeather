@@ -1,5 +1,5 @@
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart, FaSignOutAlt } from 'react-icons/fa';
+import { FaGithub, FaHeart, FaSignOutAlt } from 'react-icons/fa';
 import { logoutAction } from '../redux/Actions/userActions';
 import { useDispatch } from 'react-redux';
 import 'react-pro-sidebar/dist/css/styles.css';

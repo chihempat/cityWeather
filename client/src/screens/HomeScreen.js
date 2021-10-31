@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import axios from 'axios';
-import moment from 'moment';
 import WeatherChart from '../components/WeatherChart';
 import WeatherCard from '../components/WeatherCard';
 import Message from '../components/Message';
@@ -27,23 +25,16 @@ const HomeScreen = ({ history }) => {
     const userData = localStorage.getItem('userInfo');
 
     const [city, setCity] = useState('Delhi');
-    const [wsuccess, setWSuccess] = useState(false);
-    const [fsuccess, setFSuccess] = useState(false);
     const weather = useSelector(state => state.cityWeather);
     const forecast = useSelector(state => state.cityForecast);
     const { loading: weatherLoading, error: weatherError, data: weatherData, success: weatherSuccess} = weather;
     const { loading: forecastLoading, error: forecastError, data: forecastData, success: forecastSuccess } = forecast;
 
     const getWeather = async (city) => {
-
         dispatch(fetchWeatherAction(city));
-
-         setWSuccess(true);
-
     }
     const getForecast = async (city) => {
         dispatch(fetchForecastAction(city));
-        setFSuccess(true);
     }
     useEffect(() => {
         if (!userData)

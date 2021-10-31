@@ -11,9 +11,6 @@ const WeatherChart = ({ data: weather }) => {
   let temps = weather.map(day => day.main.temp - 273.15);
   let humidities = weather.map(day => day.main.humidity);
   let pressures = weather.map(day => day.main.pressure);
-  let windSpeeds = weather.map(day => day.wind.speed);
-  let descriptions = weather.map(day => day.weather[0].description);
-  let frequent = descriptions.filter((value, index, self) => self.indexOf(value) === index);
 
   let avgTemp = temps.reduce((a, b) => a + b, 0) / dataLength;
   let avgHumidity = humidities.reduce((a, b) => a + b,0) / dataLength;

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAction, registerAction, logoutAction } from "../redux/Actions/userActions";
-import axios from "axios";
+import { loginAction, registerAction } from "../redux/Actions/userActions";
 import Message from '../components/Message';
 import Loader from '../components/Loader.js';
 import './Auth.css';
 
-function AuthScreen({ history }) {
+function AuthScreen() {
 
   const dispatch = useDispatch();
   const userLogin = useSelector(state => state.userLogin);
@@ -19,7 +18,6 @@ function AuthScreen({ history }) {
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [method, setMethod] = useState("login");
 
   const register = async () => {
@@ -46,17 +44,17 @@ function AuthScreen({ history }) {
       }
     } catch (error) {
     };
-    const getUser = async () => {
-      try {
-        const data = await axios({
-          method: "GET",
-          withCredentials: true,
-          url: "http://localhost:4000/user",
-        })
-      } catch (error) {
-        console.log(error);
-      }
-    };
+    // const getUser = async () => {
+    //   try {
+    //     const data = await axios({
+    //       method: "GET",
+    //       withCredentials: true,
+    //       url: "http://localhost:4000/user",
+    //     })
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
   }
   useEffect(() => {
     if (loginUser) {
@@ -73,7 +71,7 @@ function AuthScreen({ history }) {
     return (
       <div className="App">
         <h1>Auth Screen</h1>
-        {loginLoading || registerLoading && <h3><Loader ></Loader></h3>}
+        {(loginLoading || registerLoading) && <h3><Loader ></Loader></h3>}
         {loginError && <Message variant='danger'>{loginError}</Message>}
         {registerError && <Message variant='danger'>{registerError}</Message>}
         {method === "login" ? (
