@@ -1,0 +1,124 @@
+body{
+  font-family: apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: normal;
+  font-size: 100%;
+  background-color: #282c34;
+}
+.section{
+  padding: 1em;
+}
+
+.data-card{
+  display: inline-block;
+  border-radius: .5em;
+  box-shadow: 0 1px 2.5em rgba(0,0,0,.1);
+  padding: 1em 1em 1em 1em;
+  background-color: rgb(15, 15, 15, .5);
+  width: 120px;
+  transition: .15s ease-out all;
+  border: 1px solid transparent;
+  cursor: default;
+  position: relative;
+  color: #fff;
+  height: 550px;
+  width: 500px;
+  padding: 1rem;
+}
+.data-card__val{
+  font-weight: 200;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.data-card__val2{
+  font-weight: 200;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.data-card__label{
+  margin-bottom: .75em;
+  font-size: 19px;
+  font-weight: 500;
+  color: #777E86;
+}
+
+.data-card__color{
+  width: 20px;
+  height: 5px;
+  background-color: #fcfcfc;
+  border-radius: 1em;
+}
+
+
+.Home{
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.display{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  color: #fff;
+}
+
+.Card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background: rgb(26, 26, 26);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  width: 40%;
+  border-radius: 5%;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+}
+
+
+select,button {
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.btn{
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  background-color: #282c34;
+  color: #fff;
+}
+
+.btn-us{
+  background-color: #fcfcfc;
+  color: #282c34;
+  width: 400px;
+  align-self: center;
+  border: 0.5px solid #ffffff;
+}
+
+.btn-us:hover{
+  background-color: #282c34;
+  color: #fff;
+}
