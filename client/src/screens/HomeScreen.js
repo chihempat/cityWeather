@@ -6,6 +6,7 @@ import WeatherChart from '../components/WeatherChart';
 import WeatherCard from '../components/WeatherCard';
 import Message from '../components/Message';
 import Loader from '../components/Message';
+import SideMenu from '../components/SideMenu';
 import { fetchWeatherAction, fetchForecastAction } from '../redux/Actions/dataActions';
 import { logoutAction } from '../redux/Actions/userActions';
 
@@ -55,6 +56,9 @@ const HomeScreen = ({ history }) => {
 
   return (
     <div className="Home">
+      <div className="sidebar">
+        <SideMenu/>
+      </div>
     <h1>Four City Weather</h1>
       <form>
         <select id="items" onChange={(e) => setCity(e.target.value)}>
@@ -78,8 +82,8 @@ const HomeScreen = ({ history }) => {
               history.push('/');
             }
           }>Logout</button>
-        <button className='btn-us' onClick={() => console.log('About us')}>ABOUT US</button>
     </div>
+
 
   )
 }
