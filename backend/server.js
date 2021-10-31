@@ -11,6 +11,7 @@ const app = express();
 const User = require("./user");
 const path = require("path");
 dotenv.config();
+const PORT = process.env.PORT || 4000;
 
 
 //----------------------------------------- END OF IMPORTS---------------------------------------------------
@@ -104,6 +105,6 @@ app.get("/user", (req, res) => {
 });
 //----------------------------------------- END OF ROUTES---------------------------------------------------
 //Start Server
-app.listen(process.env.PORT, () => {
-  console.log("Server Has Started");
+app.listen(PORT, () => {
+  console.log("Server Has Started on ", PORT);
 });
