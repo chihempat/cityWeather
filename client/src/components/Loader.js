@@ -3,7 +3,7 @@ import '../screens/HomeScreen.css'
 
 const Loader = () => {
   return (
-    <div className="data-card">
+    <div className="container-loader">
       <div className="loader">
 
       </div>

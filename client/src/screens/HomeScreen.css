@@ -10,7 +10,10 @@ body {
 }
 
 .data-card {
-    display: inline-block;
+    display: flex;
+    align-items: space-around;
+    justify-content: center;
+    flex-direction: column;
     border-radius: .5em;
     box-shadow: 0 1px 2.5em rgba(0, 0, 0, .1);
     padding: 1em 1em 1em 1em;
@@ -52,6 +55,13 @@ body {
     border-radius: 1em;
 }
 
+.data-card__temp{
+    font-size: 50px;
+    font-weight: 200;
+    margin : 0px;
+    padding : 0px;
+}
+
 .Home {
     background-color: #282c34;
     display: flex;
@@ -66,14 +76,10 @@ body {
 }
 
 .chart {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     height: 550px;
     width: 500px;
     color: #fff;
-    padding: 1rem;
+    flex-grow: 4;
 }
 
 .Card {
@@ -184,6 +190,22 @@ div.right-panel {
   position: absolute;
   top: 200px;
   left: 35%;
+}
+
+.container-loader{
+  display: inline-block;
+  border-radius: .5em;
+  padding: 1em 1em 1em 1em;
+  background-color:inherit;
+  width: 120px;
+  transition: .15s ease-out all;
+  border: 1px solid transparent;
+  cursor: default;
+  position: relative;
+  color: #fff;
+  height: 550px;
+  width: 500px;
+  padding: 1rem;
 }
 
 @keyframes spin {

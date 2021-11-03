@@ -10,10 +10,15 @@ const WeatherCard = ({ city, data }) => {
       <>
         <div className='section'>
           <div className='data-card'>
-            <span className='title'>{city} <span><img alt='icon' src={`http://openweathermap.org/img/w/${icon}.png`} /></span></span>
-            <div className='data-card__val'>
-              <p>Temperature: {(temp - 272.07).toFixed(2)}&deg;C</p>
+            <div className='data-title'>
+                            <img alt='icon' src={`http://openweathermap.org/img/w/${icon}.png`} />
+            <p className='title'>
+                {city} -
+                <span className='data-card__temp'> {(temp - 272.07).toFixed(2)}&deg;C</span>
+              </p>
+
             </div>
+
             <div className='data-card__val'>
               <p>Description : {description} </p>
               <p>Pressure: {pressure}</p>
