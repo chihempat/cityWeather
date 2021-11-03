@@ -10,7 +10,7 @@ const WeatherCard = ({ city, data }) => {
       <>
         <div className='section'>
           <div className='data-card'>
-            <h1>{city} <span><img alt='icon' src={`http://openweathermap.org/img/w/${icon}.png`} /></span></h1>
+            <span className='title'>{city} <span><img alt='icon' src={`http://openweathermap.org/img/w/${icon}.png`} /></span></span>
             <div className='data-card__val'>
               <p>Temperature: {(temp - 272.07).toFixed(2)}&deg;C</p>
             </div>
@@ -18,13 +18,29 @@ const WeatherCard = ({ city, data }) => {
               <p>Description : {description} </p>
               <p>Pressure: {pressure}</p>
               <p>Humidity: {humidity} % </p>
-            </div>
-            <div className='data-card__val'>
               <p>Wind Speed: {speed} km/h</p>
               <p>Wind Direction: {deg} &deg;</p>
             </div>
           </div>
         </div>
+        {/* <div className="widget">
+            <div className="left-panel panel">
+                <div className="date">
+                    Monday, 20 Aug 2018
+                </div>
+                <div className="city">
+                    Mumbai
+                </div>
+                <div className="temp">
+                   <img src="https://s5.postimg.cc/yzcm7htyb/image.png" alt="" width="60" />
+                   27&deg;
+                </div>
+            </div>
+            <div className="right-panel panel">
+                <img src="https://s5.postimg.cc/lifnombwz/mumbai1.png" alt="" width="160" />
+            </div>
+
+        </div> */}
       </>
     )
   }

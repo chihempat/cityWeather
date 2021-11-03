@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import './App.css';
 import store from './redux/store';
 import { Provider } from 'react-redux';
@@ -14,20 +14,12 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Router>
-          <Route path="/" component={() => {
-            if (userData) {
-              return <HomeScreen/>
-            } else {
-              return <AuthScreen/>
-            }
-          }} exact />
-          <Route path="/home" component={() => {
-            if (userData) {
-              return <HomeScreen/>
-            } else {
-              return <AuthScreen/>
-            }
-          }} exact />
+          <Route path="/" exact>
+            {userData ? <Redirect to="/home" /> : <AuthScreen />}
+          </Route>
+          <Route path="/home" exact>
+             {!userData ? <Redirect to="/" /> : <HomeScreen />}
+          </Route>
         </Router>
       </Provider>
     </div>

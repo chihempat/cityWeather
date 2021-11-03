@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAction, registerAction } from "../redux/Actions/userActions";
 import Message from '../components/Message';
-import Loader from '../components/Loader.js';
+import Loader from '../components/Loader';
 import './Auth.css';
 
 function AuthScreen() {
@@ -24,10 +24,10 @@ function AuthScreen() {
     try {
 
       dispatch(registerAction(registerUsername, registerPassword));
-      setRegisterPassword('');
-      setRegisterUsername('');
+      //reset();
       if (registerUser) {
         //history.push("/home");
+
       }
 
     } catch (error) {
@@ -37,8 +37,7 @@ function AuthScreen() {
   const login = async () => {
     try {
       dispatch(loginAction(loginUsername, loginPassword));
-      setLoginPassword('');
-      setLoginUsername('');
+      //reset();
       if (loginUser) {
         //history.push("/home");
       }
@@ -56,14 +55,23 @@ function AuthScreen() {
     //   }
     // };
   }
+  // eslint-disable-next-line
+  const reset = () => {
+    setRegisterPassword('');
+    setRegisterUsername('');
+    setLoginPassword('');
+    setLoginUsername('');
+  }
   useEffect(() => {
     if (loginUser) {
       window.location.href = "/home";
+      //reset();
       //history.push("/home");
     }
     if(registerUser){
       //history.push("/home");
       window.location.href = "/home";
+      //reset();
     }
   }, [loginUser, registerUser]);
 
@@ -71,7 +79,7 @@ function AuthScreen() {
     return (
       <div className="App">
         <h1>Auth Screen</h1>
-        {(loginLoading || registerLoading) && <h3><Loader ></Loader></h3>}
+        {(loginLoading || registerLoading) && <Loader />}
         {loginError && <Message variant='danger'>{loginError}</Message>}
         {registerError && <Message variant='danger'>{registerError}</Message>}
         {method === "login" ? (

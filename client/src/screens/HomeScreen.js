@@ -3,7 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import WeatherChart from '../components/WeatherChart';
 import WeatherCard from '../components/WeatherCard';
 import Message from '../components/Message';
-import Loader from '../components/Message';
+import Loader from '../components/Loader';
 import SideMenu from '../components/SideMenu';
 import { fetchWeatherAction, fetchForecastAction } from '../redux/Actions/dataActions';
 import { logoutAction } from '../redux/Actions/userActions';

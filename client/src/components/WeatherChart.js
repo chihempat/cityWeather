@@ -81,7 +81,7 @@ const WeatherChart = ({ data: weather }) => {
   return (
     <div className="data-card section">
       <div className='header'>
-        <h2 className='title'>Forecast for 5 day</h2>
+        <span className='title'>Forecast for 5 day</span>
       </div>
       <div style={{ color: '#FFFFFF'}}>
         <p className='data-card__val2 btn' onClick={()=>{setChartData(data1)}}>Temperature : {avgTemp.toFixed(2)}</p>

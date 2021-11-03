@@ -1,16 +1,13 @@
 import React from 'react'
-import { Spinner } from 'react-bootstrap';
-
+import '../screens/HomeScreen.css'
 
 const Loader = () => {
   return (
-    <Spinner
-      animation="border"
-      role="status"
-      style={{ width: '100px', height: '100px', margin:'auto', display: 'block'}}>
+    <div className="data-card">
+      <div className="loader">
 
-      <span className="sr-only">Loading...</span>
-    </Spinner>
+      </div>
+    </div>
   )
 }
 
